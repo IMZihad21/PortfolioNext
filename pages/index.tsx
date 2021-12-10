@@ -25,7 +25,7 @@ const Home: NextPage<Home> = ({ projects }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/projects`);
+  const res = await fetch(`${server}/api/projects`);
   const portfolioData = await res.json();
   const projects = portfolioData;
 

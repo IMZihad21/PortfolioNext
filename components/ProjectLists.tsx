@@ -7,7 +7,6 @@ interface ProjectLists {
 };
 
 const ProjectLists: NextPage<ProjectLists> = ({ projects }) => {
-    console.log(projects)
     return (
         <div data-aos="fade-up">
             <h1 className="text-4xl md:text-5xl font-bold leading-normal">My Projects</h1>
