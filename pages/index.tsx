@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Banner from '../components/Banner'
 import ProjectLists from '../components/ProjectLists'
 import Project from '../interfaces/Project'
+import { server } from '../config'
 
 interface Home {
   projects: Array<Project>
@@ -24,9 +25,9 @@ const Home: NextPage<Home> = ({ projects }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`https://gist.githubusercontent.com/IMZihad21/87c7211efa951e1f10b4d4f5c89fc5d5/raw/portfolioData.json`);
+  const res = await fetch(`http://localhost:3000/api/projects`);
   const portfolioData = await res.json();
-  const projects = portfolioData.projects;
+  const projects = portfolioData;
 
   return {
     props: {
